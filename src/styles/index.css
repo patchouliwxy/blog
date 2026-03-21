@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+@import "prismjs/themes/prism-tomorrow.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-surface text-ink antialiased dark:bg-slate-950 dark:text-slate-100;
+  }
+
+  * {
+    @apply border-slate-200;
+  }
+}

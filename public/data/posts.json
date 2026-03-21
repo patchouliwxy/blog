@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "slug": "building-modern-blog-with-react",
+    "title": "用 React 构建现代个人博客系统",
+    "excerpt": "从内容建模、Tailwind 视觉系统到 GitHub Pages 部署，拆解一个真正可用的博客前端项目。",
+    "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    "tags": ["React", "Architecture", "Deployment"],
+    "publishedAt": "2026-03-10T08:00:00.000Z",
+    "readingTime": "8 min read",
+    "likes": 128,
+    "markdownPath": "/posts/building-modern-blog-with-react.md",
+    "searchableText": "React TypeScript Vite Tailwind 博客系统 Markdown GitHub Pages 路由 状态管理 主题切换"
+  },
+  {
+    "id": 2,
+    "slug": "tailwind-content-driven-design",
+    "title": "内容优先的 Tailwind 设计方法",
+    "excerpt": "如何通过排版、留白与语义化色彩，让技术博客不再像模板站。",
+    "cover": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    "tags": ["Tailwind", "Design", "Frontend"],
+    "publishedAt": "2026-03-06T09:30:00.000Z",
+    "readingTime": "6 min read",
+    "likes": 92,
+    "markdownPath": "/posts/tailwind-content-driven-design.md",
+    "searchableText": "Tailwind CSS 排版 组件 设计系统 响应式 深色模式 视觉风格"
+  },
+  {
+    "id": 3,
+    "slug": "frontend-search-and-mock-data",
+    "title": "前端搜索与 Mock 数据的实战组合",
+    "excerpt": "不依赖真实后端，也能快速完成博客列表、搜索与详情页的数据串联。",
+    "cover": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    "tags": ["Mock API", "Search", "TypeScript"],
+    "publishedAt": "2026-02-28T11:15:00.000Z",
+    "readingTime": "7 min read",
+    "likes": 76,
+    "markdownPath": "/posts/frontend-search-and-mock-data.md",
+    "searchableText": "mock API JSON 搜索 模糊匹配 fetch hooks TypeScript 博客列表 标签过滤"
+  }
+]
