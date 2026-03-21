@@ -1,0 +1,1 @@
+import{j as e,H as n,S as o,e as a}from"./index-DmUNyKmr.js";const r=({title:s,description:t=a})=>e.jsxs(n,{children:[e.jsx("title",{children:`${s} | ${o}`}),e.jsx("meta",{name:"description",content:t})]});export{r as S};

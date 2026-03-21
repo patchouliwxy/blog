@@ -1,0 +1,1 @@
+const a=e=>new Intl.DateTimeFormat("zh-CN",{year:"numeric",month:"long",day:"numeric"}).format(new Date(e)),t=e=>e.toLowerCase().trim().replace(/[^\w\u4e00-\u9fa5\s-]/g,"").replace(/\s+/g,"-");export{a as f,t as s};
