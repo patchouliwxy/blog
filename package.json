@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "sync:content": "node scripts/sync-content.mjs",
+    "build": "npm run sync:content && npm run check:content && tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json && vite build && node scripts/generate-site-assets.mjs",
+    "check:content": "node scripts/check-content.mjs",
+    "new:post": "node scripts/create-post.mjs",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist"
   },

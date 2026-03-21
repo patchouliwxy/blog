@@ -1,0 +1,9 @@
+{
+  "siteName": "Aster Blog",
+  "siteDescription": "一个为个人表达、技术写作与灵感记录设计的现代博客前端。",
+  "siteUrl": "https://your-name.github.io/personal-blog-system-frontend",
+  "author": "Aster Lin",
+  "githubUrl": "https://github.com/your-name",
+  "email": "hello@example.com",
+  "language": "zh-CN"
+}

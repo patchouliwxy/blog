@@ -3,39 +3,51 @@
     "id": 1,
     "slug": "building-modern-blog-with-react",
     "title": "用 React 构建现代个人博客系统",
-    "excerpt": "从内容建模、Tailwind 视觉系统到 GitHub Pages 部署，拆解一个真正可用的博客前端项目。",
+    "excerpt": "用 React 构建现代个人博客系统 一个好的博客前端，不只是把文章渲染出来，而是要让写作、浏览、维护与部署都足够顺滑。 项目目标 这套博客系统围绕三个目标设计： 使用 建立清...",
     "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-    "tags": ["React", "Architecture", "Deployment"],
+    "tags": [
+      "React",
+      "Architecture",
+      "Deployment"
+    ],
     "publishedAt": "2026-03-10T08:00:00.000Z",
     "readingTime": "8 min read",
     "likes": 128,
     "markdownPath": "/posts/building-modern-blog-with-react.md",
-    "searchableText": "React TypeScript Vite Tailwind 博客系统 Markdown GitHub Pages 路由 状态管理 主题切换"
+    "searchableText": "用 React 构建现代个人博客系统 用 React 构建现代个人博客系统 一个好的博客前端，不只是把文章渲染出来，而是要让写作、浏览、维护与部署都足够顺滑。 项目目标 这套博客系统围绕三个目标设计： 使用 建立清... React Architecture Deployment 用 React 构建现代个人博客系统 一个好的博客前端，不只是把文章渲染出来，而是要让写作、浏览、维护与部署都足够顺滑。 项目目标 这套博客系统围绕三个目标设计： 使用 建立清晰、可维护的前端骨架 使用 快速沉淀一致的视觉语言 使用 与本地 数据，让内容生产成本尽量低 为什么选择这种组合 提供了很快的开发体验， 负责多页面导航， 用来管理主题和点赞这类全局状态。 内容来源 文章元数据放在 中，正文则保存在 。这样做有两个好处： 数据结构清晰，首页列表与详情页可以分别加载 未来切换到真实接口时，只需要替换数据层实现 页面体验 详情页增加了自动目录、阅读进度条和点赞按钮，这些功能都能显著提升阅读体验。 GitHub Pages 部署建议 如果你准备部署到 GitHub Pages，推荐这样配置： 同时记得在 中通过 配置仓库子路径。 总结 这类博客项目的关键并不在于功能堆砌，而在于内容流、样式系统与部署流程是否足够稳定。"
   },
   {
     "id": 2,
     "slug": "tailwind-content-driven-design",
     "title": "内容优先的 Tailwind 设计方法",
-    "excerpt": "如何通过排版、留白与语义化色彩，让技术博客不再像模板站。",
+    "excerpt": "内容优先的 Tailwind 设计方法 很多博客页面的问题不在于缺功能，而在于内容的视觉层次不够明确。 从排版开始 技术内容通常包含标题、摘要、代码块、引用与列表，因此设计时应...",
     "cover": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
-    "tags": ["Tailwind", "Design", "Frontend"],
+    "tags": [
+      "Tailwind",
+      "Design",
+      "Frontend"
+    ],
     "publishedAt": "2026-03-06T09:30:00.000Z",
     "readingTime": "6 min read",
     "likes": 92,
     "markdownPath": "/posts/tailwind-content-driven-design.md",
-    "searchableText": "Tailwind CSS 排版 组件 设计系统 响应式 深色模式 视觉风格"
+    "searchableText": "内容优先的 Tailwind 设计方法 内容优先的 Tailwind 设计方法 很多博客页面的问题不在于缺功能，而在于内容的视觉层次不够明确。 从排版开始 技术内容通常包含标题、摘要、代码块、引用与列表，因此设计时应... Tailwind Design Frontend 内容优先的 Tailwind 设计方法 很多博客页面的问题不在于缺功能，而在于内容的视觉层次不够明确。 从排版开始 技术内容通常包含标题、摘要、代码块、引用与列表，因此设计时应该先服务这些真实内容。 建立语义化样式 当我们定义颜色和圆角时，最好让它们服务于页面语义： 主色用于导航、按钮和激活状态 中性色用于正文与分隔 强调色用于点缀和阅读节奏变化 深色模式 Tailwind 的 模式非常适合个人博客。 实现方式 可以把主题状态保存在 中，再通过给 添加 类来切换。 结语 好看的博客并不一定复杂，但一定要让内容看起来被认真对待。"
   },
   {
     "id": 3,
     "slug": "frontend-search-and-mock-data",
     "title": "前端搜索与 Mock 数据的实战组合",
-    "excerpt": "不依赖真实后端，也能快速完成博客列表、搜索与详情页的数据串联。",
+    "excerpt": "前端搜索与 Mock 数据的实战组合 当项目还没有后端时， 是一种很高效的开发方式。 为什么先用 Mock API 它可以让我们先把列表、详情、搜索、标签筛选这些核心体验搭起来...",
     "cover": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-    "tags": ["Mock API", "Search", "TypeScript"],
+    "tags": [
+      "Mock API",
+      "Search",
+      "TypeScript"
+    ],
     "publishedAt": "2026-02-28T11:15:00.000Z",
     "readingTime": "7 min read",
     "likes": 76,
     "markdownPath": "/posts/frontend-search-and-mock-data.md",
-    "searchableText": "mock API JSON 搜索 模糊匹配 fetch hooks TypeScript 博客列表 标签过滤"
+    "searchableText": "前端搜索与 Mock 数据的实战组合 前端搜索与 Mock 数据的实战组合 当项目还没有后端时， 是一种很高效的开发方式。 为什么先用 Mock API 它可以让我们先把列表、详情、搜索、标签筛选这些核心体验搭起来... Mock API Search TypeScript 前端搜索与 Mock 数据的实战组合 当项目还没有后端时， 是一种很高效的开发方式。 为什么先用 Mock API 它可以让我们先把列表、详情、搜索、标签筛选这些核心体验搭起来，再逐步替换成真实服务。 搜索实现思路 前端模糊搜索并不复杂，关键是把可以被检索的字段提前准备好。 推荐字段 标题 摘要 标签 正文关键词摘要 可扩展方向 后续如果文章规模扩大，可以考虑： 构建时生成静态搜索索引 使用更强的前端搜索库 接入后端全文检索服务 小结 在博客项目早期，重要的是先把内容体验跑通，而不是过早依赖复杂基础设施。"
   }
 ]
