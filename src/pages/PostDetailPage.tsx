@@ -7,7 +7,6 @@ import { EmptyState } from "@/components/common/EmptyState";
 import { MarkdownRenderer } from "@/components/blog/MarkdownRenderer";
 import { TableOfContents } from "@/components/blog/TableOfContents";
 import { ReadingProgressBar } from "@/components/blog/ReadingProgressBar";
-import { LikeButton } from "@/components/blog/LikeButton";
 import { useBlogData } from "@/hooks/useBlogData";
 import { useReadingProgress } from "@/hooks/useReadingProgress";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
@@ -93,7 +92,6 @@ export default function PostDetailPage() {
             </h1>
             <p className="max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">{post.excerpt}</p>
           </div>
-          <LikeButton slug={post.slug} baseLikes={post.likes} />
         </div>
       </motion.section>
 

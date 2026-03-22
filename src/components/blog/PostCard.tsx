@@ -48,15 +48,12 @@ export const PostCard = ({ post }: PostCardProps) => (
           </span>
         ))}
       </div>
-      <div className="flex items-center justify-between">
-        <Link
-          to={`/posts/${post.slug}`}
-          className="text-sm font-semibold text-primary-600 transition hover:text-primary-700 dark:text-primary-300"
-        >
-          阅读全文
-        </Link>
-        <span className="text-sm text-slate-500 dark:text-slate-400">❤ {post.likes}</span>
-      </div>
+      <Link
+        to={`/posts/${post.slug}`}
+        className="inline-flex text-sm font-semibold text-primary-600 transition hover:text-primary-700 dark:text-primary-300"
+      >
+        阅读全文
+      </Link>
     </div>
   </motion.article>
 );

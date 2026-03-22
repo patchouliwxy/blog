@@ -70,7 +70,6 @@ const run = async () => {
     tags,
     publishedAt: date,
     readingTime,
-    likes: 0,
     markdownPath,
     searchableText: [title, excerpt, tags.join(" ")].filter(Boolean).join(" ")
   };

@@ -7,7 +7,6 @@ export interface BlogPostMeta {
   tags: string[];
   publishedAt: string;
   readingTime: string;
-  likes: number;
   markdownPath: string;
   searchableText: string;
 }
