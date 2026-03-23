@@ -10,7 +10,7 @@ export default function AboutPage() {
       <SectionTitle
         eyebrow="About me"
         title="关于这个作者"
-        description="用一个轻量、真实、适合个人品牌展示的页面来承接博客内容之外的信息。"
+        description=""
       />
       <section className="grid gap-8 rounded-[2.5rem] border border-slate-200 bg-white p-8 shadow-soft dark:border-slate-800 dark:bg-slate-900 md:grid-cols-[280px_minmax(0,1fr)] md:p-12">
         <div className="space-y-5">

@@ -50,9 +50,6 @@ export const RootLayout = ({ children }: RootLayoutProps) => (
 
     <main className="mx-auto w-full max-w-[1500px] px-4 pb-20 sm:px-6 lg:px-8">{children}</main>
 
-    <footer className="border-t border-black/8 bg-[#e6ddd5] py-8 text-center text-sm text-slate-600 dark:border-white/6 dark:bg-[#0c0c0c] dark:text-white/45">
-      <p>Thoughtful writing, cinematic layout, and a quiet dark canvas.</p>
-    </footer>
 
     <BackToTop />
   </div>

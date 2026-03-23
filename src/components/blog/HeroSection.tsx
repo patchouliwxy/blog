@@ -19,13 +19,13 @@ export const HeroSection = () => (
         className="max-w-3xl"
       >
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] text-[#f0c4a4]">
-          Recent writing
+          
         </p>
         <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white">
-          用整张背景图把首页的情绪先拉满
+          patchouli blog
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-8 text-slate-800/80 sm:text-lg dark:text-white/70">
-          首页不再承担太多工具入口，只保留一个足够完整的视觉开场，以及下方最重要的最近更新内容。
+          
         </p>
       </motion.div>
     </div>
