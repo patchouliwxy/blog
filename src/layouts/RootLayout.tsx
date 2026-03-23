@@ -17,7 +17,7 @@ interface RootLayoutProps {
 
 export const RootLayout = ({ children }: RootLayoutProps) => (
   <div className="min-h-screen bg-[#f3ece6] text-slate-900 transition-colors dark:bg-[#111111] dark:text-white">
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-[linear-gradient(180deg,#cf7448_0%,#bb5a31_100%)] shadow-[0_12px_40px_rgba(0,0,0,0.18)] dark:border-white/6 dark:bg-[linear-gradient(180deg,#ba5c31_0%,#b2522b_100%)]">
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-[linear-gradient(180deg,#c9b5ff_0%,#bea6ff_100%)] shadow-[0_12px_40px_rgba(0,0,0,0.18)] dark:border-white/6 dark:bg-[linear-gradient(180deg,#c9b5ff_0%,#bea6ff_100%)]">
       <div className="mx-auto flex w-full max-w-[1500px] items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <NavLink to="/" className="flex min-w-0 items-center gap-3 text-white">
           <span className="grid h-10 w-10 place-items-center rounded-xl border border-white/20 bg-black/10 text-lg font-bold shadow-inner">

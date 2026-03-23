@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import {
   createExcerpt,
+  estimateReadingTime,
   createSearchableText,
   readPosts,
   resolvePublicPath,
@@ -16,18 +17,20 @@ const run = async () => {
       const markdownPath = resolvePublicPath(post.markdownPath);
       const markdown = await readFile(markdownPath, "utf8");
       const excerpt = createExcerpt(markdown, post.title);
+      const readingTime = estimateReadingTime(markdown);
       const searchableText = createSearchableText({ ...post, excerpt }, markdown);
 
       return {
         ...post,
         excerpt,
+        readingTime,
         searchableText
       };
     })
   );
 
   await writePosts(sortPosts(syncedPosts));
-  console.log(`Synced excerpt and search text for ${syncedPosts.length} posts.`);
+  console.log(`Synced excerpt, reading time, and search text for ${syncedPosts.length} posts.`);
 };
 
 void run();

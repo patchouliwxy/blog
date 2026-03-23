@@ -61,6 +61,19 @@ export const createSearchableText = (post, markdown) => {
     .trim();
 };
 
+export const estimateReadingTime = (markdown) => {
+  const clean = stripMarkdown(markdown);
+  const chineseChars = (clean.match(/[\u4e00-\u9fff]/g) ?? []).length;
+  const englishWords = clean
+    .replace(/[\u4e00-\u9fff]/g, " ")
+    .split(/\s+/)
+    .map((token) => token.trim())
+    .filter(Boolean).length;
+
+  const minutes = Math.max(1, Math.ceil(chineseChars / 300 + englishWords / 200));
+  return `${minutes} min read`;
+};
+
 export const ensureDir = async (targetPath) => {
   await mkdir(targetPath, { recursive: true });
 };

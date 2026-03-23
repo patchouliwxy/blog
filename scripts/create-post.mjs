@@ -3,6 +3,7 @@ import path from "node:path";
 import {
   copyCoverFile,
   createPlaceholderCoverFile,
+  estimateReadingTime,
   postsDir,
   readPosts,
   slugify,
@@ -36,15 +37,12 @@ const tags = getArgValue("tags")
   .filter(Boolean);
 const coverUrl = getArgValue("cover").trim();
 const coverFile = getArgValue("coverFile").trim();
-const readingTime = getArgValue("readingTime").trim() || "5 min read";
 const date = getArgValue("date").trim() || new Date().toISOString();
 
 const fallbackSlug = `post-${new Date().toISOString().slice(0, 19).replace(/[-:T]/g, "")}`;
 const slug = slugArg || slugify(title) || fallbackSlug;
 
-const loadTemplate = async () => {
-  return readFile(templatePath, "utf8");
-};
+const loadTemplate = async () => readFile(templatePath, "utf8");
 
 const run = async () => {
   const [posts, template] = await Promise.all([readPosts(), loadTemplate()]);
@@ -61,6 +59,9 @@ const run = async () => {
     ? await copyCoverFile(coverFile, slug)
     : coverUrl || (await createPlaceholderCoverFile(title, slug));
 
+  const markdown = template.replaceAll("{{title}}", title).replaceAll("{{excerpt}}", excerpt);
+  const readingTime = estimateReadingTime(markdown);
+
   const newPost = {
     id: nextId,
     slug,
@@ -74,10 +75,6 @@ const run = async () => {
     searchableText: [title, excerpt, tags.join(" ")].filter(Boolean).join(" ")
   };
 
-  const markdown = template
-    .replaceAll("{{title}}", title)
-    .replaceAll("{{excerpt}}", excerpt);
-
   const updatedPosts = sortPosts([newPost, ...posts]);
 
   await writePosts(updatedPosts);
@@ -87,6 +84,7 @@ const run = async () => {
   console.log(`Slug: ${slug}`);
   console.log(`Markdown: public/posts/${slug}.md`);
   console.log(`Cover: public${cover}`);
+  console.log(`Reading time: ${readingTime}`);
   console.log("Next: edit the markdown content, then run npm run sync:content.");
 };
 

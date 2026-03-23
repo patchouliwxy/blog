@@ -25,6 +25,10 @@ const run = async () => {
       fail(`Invalid post entry: ${JSON.stringify(post)}`);
     }
 
+    if (typeof post.readingTime !== "string" || !post.readingTime.trim()) {
+      fail(`Missing readingTime for slug: ${post.slug}`);
+    }
+
     if (idSet.has(post.id)) {
       fail(`Duplicate id found: ${post.id}`);
     }
