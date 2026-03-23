@@ -11,10 +11,10 @@ export const TagChip = ({ label, active = false, onClick }: TagChipProps) => (
     type="button"
     onClick={onClick}
     className={clsx(
-      "rounded-full px-4 py-2 text-sm font-medium transition",
+      "rounded-full border px-4 py-2 text-sm font-medium transition",
       active
-        ? "bg-primary-600 text-white"
-        : "bg-slate-100 text-slate-700 hover:bg-primary-100 hover:text-primary-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+        ? "border-[#d18b5f] bg-[#d18b5f]/16 text-[#ffd7b9]"
+        : "border-white/8 bg-white/[0.03] text-white/70 hover:border-white/18 hover:text-white"
     )}
   >
     #{label}

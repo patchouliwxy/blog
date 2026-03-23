@@ -6,7 +6,7 @@ interface PostListProps {
 }
 
 export const PostList = ({ posts }: PostListProps) => (
-  <div className="grid gap-8 lg:grid-cols-2">
+  <div className="grid gap-6">
     {posts.map((post) => (
       <PostCard key={post.slug} post={post} />
     ))}
