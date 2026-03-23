@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
+import { withBase } from "@/lib/site";
 
 export const HeroSection = () => (
   <section className="relative -mx-4 min-h-[640px] overflow-hidden sm:-mx-6 lg:-mx-8">
     <img
-      src="/images/background.jpg"
+      src={withBase("/images/background.jpg")}
       alt="Hero background"
       className="absolute inset-0 h-full w-full object-cover"
     />
