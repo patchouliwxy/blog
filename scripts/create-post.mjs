@@ -23,13 +23,35 @@ const getArgValue = (name) => {
   return args[flagIndex + 1] ?? "";
 };
 
-const title = getArgValue("title").trim();
+const getPositionalArgs = () => {
+  const positionalArgs = [];
+
+  for (let index = 0; index < args.length; index += 1) {
+    const currentArg = args[index];
+
+    if (currentArg.startsWith("--")) {
+      const nextArg = args[index + 1];
+      if (nextArg && !nextArg.startsWith("--")) {
+        index += 1;
+      }
+
+      continue;
+    }
+
+    positionalArgs.push(currentArg);
+  }
+
+  return positionalArgs;
+};
+
+const positionalArgs = getPositionalArgs();
+const title = (getArgValue("title") || positionalArgs[0] || "").trim();
 if (!title) {
-  console.error('Missing required argument: --title "Your post title"');
+  console.error('Missing required title. Use --title "Your post title" or pass the title as the first positional argument.');
   process.exit(1);
 }
 
-const slugArg = getArgValue("slug").trim();
+const slugArg = (getArgValue("slug") || positionalArgs[1] || "").trim();
 const excerpt = getArgValue("excerpt").trim();
 const tags = getArgValue("tags")
   .split(",")

@@ -21,7 +21,7 @@ export const RootLayout = ({ children }: RootLayoutProps) => (
       <div className="mx-auto flex w-full max-w-[1500px] items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <NavLink to="/" className="flex min-w-0 items-center gap-3 text-white">
           <span className="grid h-10 w-10 place-items-center rounded-xl border border-white/20 bg-black/10 text-lg font-bold shadow-inner">
-            EF
+            P
           </span>
           <span className="truncate text-lg font-bold tracking-tight sm:text-2xl">{SITE_NAME}</span>
         </NavLink>

@@ -1,5 +1,17 @@
 [
   {
+    "id": 4,
+    "slug": "test",
+    "title": "测试",
+    "excerpt": "测试 的内容摘要，记得在正文完善后执行同步脚本自动刷新摘要。",
+    "cover": "/images/posts/test.svg",
+    "tags": [],
+    "publishedAt": "2026-03-23T17:54:01+08:00",
+    "readingTime": "1 min read",
+    "markdownPath": "/posts/test.md",
+    "searchableText": "测试 测试 的内容摘要，记得在正文完善后执行同步脚本自动刷新摘要。 测试 为什么写这篇文章 用这一节交代背景、问题场景以及这篇文章想解决什么。 核心思路 先用 2 到 4 段说明方案，再逐步展开细节。 关键实现 说明第一个关键点 说明第二个关键点 说明第三个关键点 示例代码 总结 用 2 到 3 句话收束全文，并给读者下一步行动建议。"
+  },
+  {
     "id": 1,
     "slug": "building-modern-blog-with-react",
     "title": "用 React 构建现代个人博客系统",
