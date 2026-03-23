@@ -22,7 +22,7 @@ export default function TagsPage() {
       <SectionTitle
         eyebrow="Browse by tags"
         title="按标签浏览"
-        description="将文章按主题重新组织，适合读者从一个兴趣点快速扩展阅读。"
+        description=""
       />
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {tags.map((tag) => {

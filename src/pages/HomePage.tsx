@@ -23,7 +23,7 @@ export default function HomePage() {
             <SectionTitle
               eyebrow="Latest updates"
               title="最近更新"
-              description="这里只保留最新几篇文章，让首页更像一张安静而直接的入口海报。"
+              description=""
             />
 
             {loading && <LoadingScreen />}

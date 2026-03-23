@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export const HeroSection = () => (
   <section className="relative -mx-4 min-h-[640px] overflow-hidden sm:-mx-6 lg:-mx-8">
     <img
-      src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=2200&q=80"
+      src="/images/background.jpg"
       alt="Hero background"
       className="absolute inset-0 h-full w-full object-cover"
     />

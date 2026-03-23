@@ -29,7 +29,7 @@ export default function SearchPage() {
       <SectionTitle
         eyebrow="Search"
         title="搜索整站文章"
-        description="前端侧完成标题与内容模糊匹配，无需后端服务即可完成基础检索体验。"
+        description=""
       />
       <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
         <SearchInput value={keyword} onChange={setKeyword} placeholder="搜索标题、摘要和正文关键词" />

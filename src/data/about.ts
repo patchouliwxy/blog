@@ -6,7 +6,7 @@ export const aboutProfile: AboutProfile = {
   role: "Full Stack Engineer",
   intro:
     "一得阁拉米",
-  avatar: "/images/avatar.svg",
+  avatar: "/images/avatar.jpg",
   skills: ["SDVX", "maimaiDX", "chunithm"],
   links: [
     { label: "GitHub", url: siteConfig.githubUrl },
