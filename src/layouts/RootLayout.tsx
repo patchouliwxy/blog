@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
-import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { BackToTop } from "@/components/common/BackToTop";
+import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { SITE_NAME } from "@/lib/constants";
 
 const navItems = [
@@ -16,8 +16,8 @@ interface RootLayoutProps {
 }
 
 export const RootLayout = ({ children }: RootLayoutProps) => (
-  <div className="min-h-screen bg-[#111111] text-white">
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-[linear-gradient(180deg,#ba5c31_0%,#b2522b_100%)] shadow-[0_12px_40px_rgba(0,0,0,0.18)]">
+  <div className="min-h-screen bg-[#f3ece6] text-slate-900 transition-colors dark:bg-[#111111] dark:text-white">
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-[linear-gradient(180deg,#cf7448_0%,#bb5a31_100%)] shadow-[0_12px_40px_rgba(0,0,0,0.18)] dark:border-white/6 dark:bg-[linear-gradient(180deg,#ba5c31_0%,#b2522b_100%)]">
       <div className="mx-auto flex w-full max-w-[1500px] items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <NavLink to="/" className="flex min-w-0 items-center gap-3 text-white">
           <span className="grid h-10 w-10 place-items-center rounded-xl border border-white/20 bg-black/10 text-lg font-bold shadow-inner">
@@ -50,7 +50,7 @@ export const RootLayout = ({ children }: RootLayoutProps) => (
 
     <main className="mx-auto w-full max-w-[1500px] px-4 pb-20 sm:px-6 lg:px-8">{children}</main>
 
-    <footer className="border-t border-white/6 bg-[#0c0c0c] py-8 text-center text-sm text-white/45">
+    <footer className="border-t border-black/8 bg-[#e6ddd5] py-8 text-center text-sm text-slate-600 dark:border-white/6 dark:bg-[#0c0c0c] dark:text-white/45">
       <p>Thoughtful writing, cinematic layout, and a quiet dark canvas.</p>
     </footer>
 

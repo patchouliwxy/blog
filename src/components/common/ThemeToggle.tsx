@@ -9,11 +9,11 @@ export const ThemeToggle = () => {
     <button
       type="button"
       onClick={() => dispatch(toggleTheme())}
-      className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-black/10 px-3 py-2 text-sm font-semibold text-white/90 backdrop-blur transition hover:bg-black/20 hover:text-white"
+      className="inline-flex items-center gap-2 rounded-full border border-black/12 bg-white/20 px-3 py-2 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/28 dark:border-white/18 dark:bg-black/10 dark:text-white dark:hover:bg-black/20"
       aria-label="切换主题"
     >
-      <span>{mode === "light" ? "深色" : "浅色"}</span>
-      <span className="text-base leading-none">{mode === "light" ? "◐" : "○"}</span>
+      <span>{mode === "dark" ? "浅色" : "深色"}</span>
+      <span className="text-base leading-none">{mode === "dark" ? "○" : "◐"}</span>
     </button>
   );
 };

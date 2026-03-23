@@ -1,46 +1,31 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export const HeroSection = () => (
-  <section className="relative -mx-4 overflow-hidden border-b border-white/8 sm:-mx-6 lg:-mx-8">
+  <section className="relative -mx-4 min-h-[640px] overflow-hidden sm:-mx-6 lg:-mx-8">
     <img
-      src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=1800&q=80"
+      src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=2200&q=80"
       alt="Hero background"
       className="absolute inset-0 h-full w-full object-cover"
     />
-    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,7,15,0.15)_0%,rgba(4,7,15,0.7)_62%,rgba(17,17,17,1)_100%)]" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_28%_18%,rgba(255,205,154,0.22),transparent_18%),radial-gradient(circle_at_78%_24%,rgba(121,161,255,0.16),transparent_22%)]" />
+    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,247,240,0.18)_0%,rgba(255,245,236,0.18)_28%,rgba(243,236,230,0.86)_78%,rgba(243,236,230,1)_100%)] dark:bg-[linear-gradient(180deg,rgba(7,9,14,0.08)_0%,rgba(8,10,15,0.24)_35%,rgba(8,8,8,0.88)_78%,rgba(17,17,17,1)_100%)]" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_12%,rgba(255,207,163,0.22),transparent_18%),radial-gradient(circle_at_78%_18%,rgba(101,143,255,0.08),transparent_20%)] dark:bg-[radial-gradient(circle_at_24%_12%,rgba(255,207,163,0.16),transparent_18%),radial-gradient(circle_at_78%_18%,rgba(101,143,255,0.12),transparent_20%)]" />
 
-    <div className="relative mx-auto flex min-h-[480px] max-w-[1500px] items-end px-4 pb-28 pt-20 sm:px-6 lg:px-8">
+    <div className="relative mx-auto flex min-h-[640px] w-full max-w-[1500px] items-end px-4 pb-24 sm:px-6 lg:px-8">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 22 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45 }}
+        transition={{ duration: 0.5 }}
         className="max-w-3xl"
       >
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#f0c4a4]">
-          Cinematic homepage layout
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] text-[#f0c4a4]">
+          Recent writing
         </p>
-        <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          把首页做成更有舞台感的深色博客入口
+        <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white">
+          用整张背景图把首页的情绪先拉满
         </h1>
-        <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
-          顶栏保持紧凑，首屏用一整块大幅背景撑开气氛，真正的内容列表则以深色浮层的方式压在画面前景里。
+        <p className="mt-6 max-w-2xl text-base leading-8 text-slate-800/80 sm:text-lg dark:text-white/70">
+          首页不再承担太多工具入口，只保留一个足够完整的视觉开场，以及下方最重要的最近更新内容。
         </p>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <Link
-            to="/search"
-            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#171717] transition hover:-translate-y-0.5"
-          >
-            搜索文章
-          </Link>
-          <Link
-            to="/about"
-            className="rounded-full border border-white/18 bg-black/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-black/20"
-          >
-            关于作者
-          </Link>
-        </div>
       </motion.div>
     </div>
   </section>
