@@ -14,7 +14,10 @@ export const MarkdownRenderer = ({ content }: MarkdownRendererProps) => (
       h1: ({ children }) => {
         const text = String(children);
         return (
-          <h1 id={slugify(text)} className="mt-10 scroll-mt-24 text-4xl font-bold tracking-tight text-slate-950 dark:text-white">
+          <h1
+            id={slugify(text)}
+            className="mt-10 scroll-mt-20 text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white"
+          >
             {children}
           </h1>
         );
@@ -22,7 +25,10 @@ export const MarkdownRenderer = ({ content }: MarkdownRendererProps) => (
       h2: ({ children }) => {
         const text = String(children);
         return (
-          <h2 id={slugify(text)} className="mt-10 scroll-mt-24 text-3xl font-bold tracking-tight text-slate-950 dark:text-white">
+          <h2
+            id={slugify(text)}
+            className="mt-10 scroll-mt-20 text-2xl font-bold tracking-tight text-neutral-900 dark:text-white"
+          >
             {children}
           </h2>
         );
@@ -30,16 +36,29 @@ export const MarkdownRenderer = ({ content }: MarkdownRendererProps) => (
       h3: ({ children }) => {
         const text = String(children);
         return (
-          <h3 id={slugify(text)} className="mt-8 scroll-mt-24 text-2xl font-semibold text-slate-950 dark:text-white">
+          <h3
+            id={slugify(text)}
+            className="mt-8 scroll-mt-20 text-xl font-semibold text-neutral-900 dark:text-white"
+          >
             {children}
           </h3>
         );
       },
-      p: ({ children }) => <p className="mt-5 text-lg leading-8 text-slate-700 dark:text-slate-300">{children}</p>,
-      ul: ({ children }) => <ul className="mt-5 list-disc space-y-2 pl-6 text-slate-700 dark:text-slate-300">{children}</ul>,
-      ol: ({ children }) => <ol className="mt-5 list-decimal space-y-2 pl-6 text-slate-700 dark:text-slate-300">{children}</ol>,
+      p: ({ children }) => (
+        <p className="mt-5 text-base leading-7 text-neutral-600 dark:text-neutral-300">{children}</p>
+      ),
+      ul: ({ children }) => (
+        <ul className="mt-4 list-disc space-y-1.5 pl-6 text-neutral-600 dark:text-neutral-300">
+          {children}
+        </ul>
+      ),
+      ol: ({ children }) => (
+        <ol className="mt-4 list-decimal space-y-1.5 pl-6 text-neutral-600 dark:text-neutral-300">
+          {children}
+        </ol>
+      ),
       blockquote: ({ children }) => (
-        <blockquote className="mt-6 border-l-4 border-primary-500 bg-primary-50/70 px-5 py-4 text-slate-700 dark:bg-slate-800 dark:text-slate-200">
+        <blockquote className="mt-6 rounded-r-lg border-l-[3px] border-accent-500 bg-neutral-50 px-5 py-3 text-neutral-600 dark:border-accent-400 dark:bg-neutral-800/60 dark:text-neutral-300">
           {children}
         </blockquote>
       ),
@@ -51,7 +70,10 @@ export const MarkdownRenderer = ({ content }: MarkdownRendererProps) => (
 
         if (inline) {
           return (
-            <code className="rounded bg-slate-100 px-1.5 py-1 text-sm text-primary-700 dark:bg-slate-800 dark:text-primary-300" {...rest}>
+            <code
+              className="rounded-md bg-neutral-100 px-1.5 py-0.5 text-sm font-medium text-accent-700 dark:bg-neutral-800 dark:text-accent-400"
+              {...rest}
+            >
               {children}
             </code>
           );
@@ -62,11 +84,11 @@ export const MarkdownRenderer = ({ content }: MarkdownRendererProps) => (
         const html = Prism.highlight(rawCode, grammar, language);
 
         return (
-          <pre className="mt-6 overflow-x-auto rounded-[1.5rem] bg-[#0f172a] p-5 text-sm leading-7 text-slate-100">
+          <pre className="mt-6 overflow-x-auto rounded-xl bg-[#0f172a] p-5 text-sm leading-relaxed">
             <code dangerouslySetInnerHTML={{ __html: html }} {...rest} />
           </pre>
         );
-      }
+      },
     }}
   >
     {content}

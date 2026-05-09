@@ -1,32 +1,59 @@
 import { motion } from "framer-motion";
-import { withBase } from "@/lib/site";
 
 export const HeroSection = () => (
-  <section className="relative -mx-4 min-h-[640px] overflow-hidden sm:-mx-6 lg:-mx-8">
-    <img
-      src={withBase("/images/background.jpg")}
-      alt="Hero background"
-      className="absolute inset-0 h-full w-full object-cover"
+  <section className="relative -mx-6 flex min-h-[520px] flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-neutral-900 via-neutral-950 to-black">
+    {/* Dot pattern overlay — like filter-dot from Sakura theme */}
+    <div
+      className="pointer-events-none absolute inset-0"
+      style={{
+        backgroundImage: "radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px)",
+        backgroundSize: "24px 24px",
+      }}
     />
-    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,247,240,0.18)_0%,rgba(255,245,236,0.18)_28%,rgba(243,236,230,0.86)_78%,rgba(243,236,230,1)_100%)] dark:bg-[linear-gradient(180deg,rgba(7,9,14,0.08)_0%,rgba(8,10,15,0.24)_35%,rgba(8,8,8,0.88)_78%,rgba(17,17,17,1)_100%)]" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_12%,rgba(255,207,163,0.22),transparent_18%),radial-gradient(circle_at_78%_18%,rgba(101,143,255,0.08),transparent_20%)] dark:bg-[radial-gradient(circle_at_24%_12%,rgba(255,207,163,0.16),transparent_18%),radial-gradient(circle_at_78%_18%,rgba(101,143,255,0.12),transparent_20%)]" />
 
-    <div className="relative mx-auto flex min-h-[640px] w-full max-w-[1500px] items-end px-4 pb-24 sm:px-6 lg:px-8">
+    {/* Large soft radial glows for depth */}
+    <div
+      className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+      style={{ background: "radial-gradient(circle, rgba(0,113,227,0.15) 0%, transparent 70%)" }}
+    />
+    <div
+      className="absolute bottom-0 right-0 h-[400px] w-[400px] translate-x-1/4 translate-y-1/4 rounded-full"
+      style={{ background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)" }}
+    />
+
+    {/* Content */}
+    <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 py-24 text-center">
       <motion.div
-        initial={{ opacity: 0, y: 22 }}
+        initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-3xl"
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] text-[#f0c4a4]">
-          
-        </p>
-        <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white">
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-accent-400"
+        >
+          Welcome to
+        </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+          className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl"
+        >
           patchouli blog
-        </h1>
-        <p className="mt-6 max-w-2xl text-base leading-8 text-slate-800/80 sm:text-lg dark:text-white/70">
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-neutral-400"
+        >
           
-        </p>
+        </motion.p>
       </motion.div>
     </div>
   </section>

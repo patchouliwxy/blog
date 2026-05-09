@@ -10,34 +10,35 @@ interface PostCardProps {
 export const PostCard = ({ post }: PostCardProps) => (
   <motion.article
     layout
-    initial={{ opacity: 0, y: 18 }}
+    initial={{ opacity: 0, y: 12 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.35 }}
-    className="group rounded-[1.8rem] bg-white/55 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.08)] backdrop-blur-[3px] dark:bg-white/[0.045] dark:shadow-[0_24px_70px_rgba(0,0,0,0.16)]"
+    transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+    className="group grid gap-6 rounded-2xl bg-white p-6 shadow-card transition-shadow hover:shadow-raised dark:bg-neutral-800/60 md:grid-cols-[280px_minmax(0,1fr)] md:items-center"
   >
-    <div className="grid gap-6 md:grid-cols-[260px_minmax(0,1fr)] md:items-center">
-      <div className="overflow-hidden rounded-[1.2rem]">
-        <img
-          src={post.cover}
-          alt={post.title}
-          className="h-48 w-full object-cover transition duration-500 group-hover:scale-105 md:h-44"
-        />
-      </div>
+    <div className="overflow-hidden rounded-xl">
+      <img
+        src={post.cover}
+        alt={post.title}
+        className="h-48 w-full object-cover transition duration-500 group-hover:scale-105 md:h-40"
+        loading="lazy"
+      />
+    </div>
 
-      <div className="space-y-4">
-        <Link to={`/posts/${post.slug}`} className="block">
-          <h3 className="text-2xl font-bold tracking-tight text-slate-900 transition group-hover:text-[#b7633b] md:text-[2rem] dark:text-white dark:group-hover:text-[#f0c4a4]">
-            {post.title}
-          </h3>
-        </Link>
+    <div className="flex flex-col gap-3">
+      <Link to={`/posts/${post.slug}`}>
+        <h3 className="text-xl font-bold tracking-tight text-neutral-900 transition-colors group-hover:text-accent-600 dark:text-white dark:group-hover:text-accent-400">
+          {post.title}
+        </h3>
+      </Link>
 
-        <p className="max-w-3xl text-base leading-8 text-slate-700/88 dark:text-white/62">{post.excerpt}</p>
+      <p className="line-clamp-2 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+        {post.excerpt}
+      </p>
 
-        <div className="flex flex-wrap items-center gap-4 text-sm text-slate-600 dark:text-white/45">
-          <span>{formatDate(post.publishedAt)}</span>
-          <span>•</span>
-          <span>{post.readingTime}</span>
-        </div>
+      <div className="flex items-center gap-3 text-xs font-medium text-neutral-400 dark:text-neutral-500">
+        <span>{formatDate(post.publishedAt)}</span>
+        <span className="text-neutral-300 dark:text-neutral-700">·</span>
+        <span>{post.readingTime}</span>
       </div>
     </div>
   </motion.article>

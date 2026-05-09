@@ -7,22 +7,22 @@ interface TableOfContentsProps {
 }
 
 export const TableOfContents = ({ items, activeId }: TableOfContentsProps) => (
-  <aside className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
-    <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
-      文章目录
+  <aside className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-card dark:border-neutral-800 dark:bg-neutral-800/60">
+    <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-neutral-400 dark:text-neutral-500">
+      目录
     </h3>
-    <nav className="mt-5 space-y-3">
+    <nav className="mt-4 space-y-2">
       {items.map((item) => (
         <a
           key={item.id}
           href={`#${item.id}`}
           className={clsx(
-            "block text-sm transition",
+            "block text-sm transition-colors",
             item.level === 3 && "pl-4",
             item.level === 2 && "pl-2",
             activeId === item.id
-              ? "font-semibold text-primary-600 dark:text-primary-300"
-              : "text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+              ? "font-semibold text-accent-600 dark:text-accent-400"
+              : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
           )}
         >
           {item.text}

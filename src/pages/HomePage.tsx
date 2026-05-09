@@ -9,23 +9,18 @@ import { useBlogData } from "@/hooks/useBlogData";
 
 export default function HomePage() {
   const { posts, loading, error } = useBlogData();
-
   const recentPosts = useMemo(() => posts.slice(0, 4), [posts]);
 
   return (
-    <div className="space-y-0">
+    <div>
       <Seo title="首页" />
       <HeroSection />
 
-      <section className="relative z-10 -mt-24 pb-14">
-        <div className="mx-auto max-w-[1100px] px-4 sm:px-0">
-          <div className="space-y-8 rounded-[2rem] bg-transparent p-0">
-            <SectionTitle
-              eyebrow="Latest updates"
-              title="最近更新"
-              description=""
-            />
+      <section className="pb-14 pt-16">
+        <div className="mx-auto max-w-[900px]">
+          <SectionTitle eyebrow="latest" title="最近更新" description="" />
 
+          <div className="mt-10">
             {loading && <LoadingScreen />}
             {error && <EmptyState title="数据加载失败" description={error} />}
             {!loading && !error && recentPosts.length === 0 && (

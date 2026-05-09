@@ -3,9 +3,9 @@ interface ReadingProgressBarProps {
 }
 
 export const ReadingProgressBar = ({ progress }: ReadingProgressBarProps) => (
-  <div className="sticky top-0 z-40 h-1 w-full bg-slate-200/70 backdrop-blur dark:bg-slate-800/70">
+  <div className="sticky top-0 z-40 h-0.5 w-full bg-neutral-200/60 backdrop-blur dark:bg-neutral-800/60">
     <div
-      className="h-full bg-gradient-to-r from-primary-500 to-accent transition-[width] duration-150"
+      className="h-full bg-accent-600 transition-[width] duration-150 dark:bg-accent-400"
       style={{ width: `${progress}%` }}
     />
   </div>

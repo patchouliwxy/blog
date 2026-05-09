@@ -8,7 +8,7 @@ const navItems = [
   { to: "/", label: "首页" },
   { to: "/tags", label: "标签" },
   { to: "/search", label: "搜索" },
-  { to: "/about", label: "关于" }
+  { to: "/about", label: "关于" },
 ];
 
 interface RootLayoutProps {
@@ -16,24 +16,29 @@ interface RootLayoutProps {
 }
 
 export const RootLayout = ({ children }: RootLayoutProps) => (
-  <div className="min-h-screen bg-[#f3ece6] text-slate-900 transition-colors dark:bg-[#111111] dark:text-white">
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-[linear-gradient(180deg,#c9b5ff_0%,#bea6ff_100%)] shadow-[0_12px_40px_rgba(0,0,0,0.18)] dark:border-white/6 dark:bg-[linear-gradient(180deg,#c9b5ff_0%,#bea6ff_100%)]">
-      <div className="mx-auto flex w-full max-w-[1500px] items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <NavLink to="/" className="flex min-w-0 items-center gap-3 text-white">
-          <span className="grid h-10 w-10 place-items-center rounded-xl border border-white/20 bg-black/10 text-lg font-bold shadow-inner">
+  <div className="min-h-screen bg-neutral-50 text-neutral-900 transition-colors dark:bg-black dark:text-neutral-50">
+    <header className="sticky top-0 z-50 border-b border-neutral-200/70 bg-neutral-50/80 backdrop-blur-xl dark:border-neutral-800/40 dark:bg-black/70">
+      <div className="mx-auto flex h-14 w-full max-w-[1200px] items-center gap-6 px-6">
+        <NavLink
+          to="/"
+          className="flex items-center gap-2.5 font-semibold tracking-tight text-neutral-900 dark:text-neutral-50"
+        >
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-600 text-xs font-bold text-white">
             P
           </span>
-          <span className="truncate text-lg font-bold tracking-tight sm:text-2xl">{SITE_NAME}</span>
+          <span className="text-base">{SITE_NAME}</span>
         </NavLink>
 
-        <nav className="ml-auto flex items-center gap-1 overflow-x-auto whitespace-nowrap text-sm no-scrollbar">
+        <nav className="ml-auto flex items-center gap-0.5 text-sm">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `rounded-full px-3 py-2 font-semibold transition ${
-                  isActive ? "bg-black/20 text-white" : "text-white/80 hover:bg-black/10 hover:text-white"
+                `rounded-md px-3 py-1.5 font-medium transition-colors ${
+                  isActive
+                    ? "bg-neutral-200/70 text-accent-700 dark:bg-neutral-800/80 dark:text-accent-400"
+                    : "text-neutral-500 hover:bg-neutral-200/40 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-100"
                 }`
               }
             >
@@ -42,14 +47,11 @@ export const RootLayout = ({ children }: RootLayoutProps) => (
           ))}
         </nav>
 
-        <div className="hidden sm:block">
-          <ThemeToggle />
-        </div>
+        <ThemeToggle />
       </div>
     </header>
 
-    <main className="mx-auto w-full max-w-[1500px] px-4 pb-20 sm:px-6 lg:px-8">{children}</main>
-
+    <main className="mx-auto w-full max-w-[1200px] px-6 pb-24">{children}</main>
 
     <BackToTop />
   </div>

@@ -4,8 +4,8 @@ import { SectionTitle } from "@/components/common/SectionTitle";
 import { SearchInput } from "@/components/common/SearchInput";
 import { PostList } from "@/components/blog/PostList";
 import { EmptyState } from "@/components/common/EmptyState";
-import { useBlogData } from "@/hooks/useBlogData";
 import { LoadingScreen } from "@/components/common/LoadingScreen";
+import { useBlogData } from "@/hooks/useBlogData";
 
 export default function SearchPage() {
   const { posts, loading, error } = useBlogData();
@@ -13,25 +13,18 @@ export default function SearchPage() {
 
   const filteredPosts = useMemo(() => {
     const query = keyword.trim().toLowerCase();
-
-    if (!query) {
-      return posts;
-    }
-
+    if (!query) return posts;
     return posts.filter((post) =>
       `${post.title} ${post.excerpt} ${post.searchableText}`.toLowerCase().includes(query)
     );
   }, [keyword, posts]);
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 pt-8">
       <Seo title="搜索" />
-      <SectionTitle
-        eyebrow="Search"
-        title="搜索整站文章"
-        description=""
-      />
-      <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft dark:border-slate-800 dark:bg-slate-900">
+      <SectionTitle eyebrow="Search" title="搜索文章" description="" />
+
+      <div className="rounded-2xl bg-white p-6 shadow-card dark:bg-neutral-800/60">
         <SearchInput value={keyword} onChange={setKeyword} placeholder="搜索标题、摘要和正文关键词" />
       </div>
 

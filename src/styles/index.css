@@ -11,11 +11,11 @@
   }
 
   body {
-    @apply min-h-screen bg-[#f3ece6] text-slate-900 antialiased dark:bg-[#111111] dark:text-white;
+    @apply min-h-screen bg-neutral-50 text-neutral-900 antialiased dark:bg-black dark:text-neutral-50;
   }
 
   * {
-    @apply border-slate-200;
+    @apply border-neutral-200 dark:border-neutral-800;
   }
 
   #root {
@@ -27,7 +27,6 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
